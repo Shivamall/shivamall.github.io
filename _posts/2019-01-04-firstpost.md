@@ -12,3 +12,9 @@ I am going to develope basic chatting app with help of firebase.
 * SignUp or Login with Google.
 * Real Time chatting.
 * I will try to develope notification feature.
+
+
+
+##week 2
+sdasasna,
+clscls
