@@ -15,6 +15,11 @@ I am going to develope basic chatting app with help of firebase.
 
 
 
-# week 2
-sdasasna,
-clscls
+# Week-2
+## Task-Completed:
+* Real Time Chatting Feature has been developed for Ios mobile and its working fine.
+
+## Task-Pending
+* User Sign UP and Login Page.
+* SignUp or Login with Google.
+* I will try to develope notification feature.
