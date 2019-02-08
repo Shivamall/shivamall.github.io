@@ -2,7 +2,7 @@
 
 # Tutorial
 
-## [Swift Chat App]({% post_url 2019-02-08-chat-app-tutorial.md %})
+## [Swift Chat App]({% post_url 2019-02-08-chat-app-tutorial %})
 
 ### Task-Completed:
 * Real Time Chatting Feature has been developed for Ios mobile and its working fine.
