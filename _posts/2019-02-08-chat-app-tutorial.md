@@ -160,6 +160,105 @@ RealTimeChat Target.
 * Double-click on the empty column next to Objective-C Bridging Header – input box appears. Type in: Bridging-Header.h and click outside the input box to confirm your change.\
 
 # Setting up Firebase Now:
+Every Chat Message has a unique $key which differentiate every chat from other. This $key is a special property of firebase database
+
+Every chat message has three properties: a name, a sender_id and the chat text.
+ A path like chatapp/chats/-KmLvuZfWAmvictV04_u/sender_id is reference to individual chat.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ * First Open firebase.google.com and signup for free account if you already have account so you can just signin.
+ * Go to your firebase dashboard
+ 
+ ## Click Add Project
+ 
+ 
+ 
+ 
+ 
+ 
+ ###Choose:
+ 
+ * Project Name: Chat
+ * Country/Region: Choose your country or region
+ 
+ 
+ Click Create Project and Add Firebase to your Ios App 
+ 
+ On Next Dialog Choose the following settings:
+ * iOS Bundle ID: Input your app’s Bundle ID.  You Choosed when creating the Xcode project. It’s like:             
+   com.shivamall.RealTimeChat.
+ * App Nickname: Anything, like “Real Time Chat App”
+ 
+ Click Register App. In the next screen that appears, Download GoogleService-Info.plist button. .plist file will be downloaded , so save it in a download location.
+ 
+ Add the .plist file to your Xcode Project . Drag and drop the file fro, finder into xcode. When dialog box appears tick the checkbox for Copy items and tick the checkbox next to Target.
+  
+  
+  ### Add initialization code:
+  
+  * Open AppDelegate.swift in our project
+  * Right below import UIKit, type: import Firebase.
+  * Locate the function application(_:didFinishLaunchingWithOptions:) and add this line to the method: FirebaseApp.configure().
+  
+  
+  
+  
+  
+  
+  * Right-click on the project  and choose New File....
+  * Pick the Swift File template, name the file Constants.swift, add it to the Chat Target, and save the file in your project     
+    folder.
+  * click Create.
+  
+  Add below code in Constants.swift:
+  
+  ```
+  import Firebase
+
+struct Constants
+{
+    struct refs
+    {
+        static let databaseRoot = Database.database().reference()
+        static let databaseChats = databaseRoot.child("chats")
+    }
+}
+  ```
+  
+ Above code is a structure to store variables reference to chat data.
+  
+  ```
+  Constants.refs.databaseChats
+  ```
+  There's Constants called databaseRoot and databaseChats. Root is to get reference to database and then databaseChats “extends” that with a child node called chats.
+  
+  * We need to set permissions. Firebase has permission tool which grant access to read or write data making data more secure from   
+    unauthorized use.
+    This is app is to be used for group chat so permisiion gonna be simple.
+
+```
+{
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
+```
+  
+  Follow the steps for configuring permissions in Firebase:
+  
+ * Head to your Firebase Dashboard and open your app. This will show you your app’s page.
+ * Choose Database option from menu on the left.
+ * From top-left, choose the tab Rules.
+ * Replace the text in the editor with the new rules and click Publish.
+ 
 
 
 
@@ -169,4 +268,192 @@ RealTimeChat Target.
 
 
 
+
+
+  
+  
+  Now Check your is compiling properly or not.
+  
+  # Setting Up The Messages View Controller
+  Now we going config Ui plugin and connect it firebase.
+  
+  * Open ChatViewController.swift and locate the class.
+  * Add import JSQMessagesViewController below import UIKit.
+  * Replace UIViewController with JSQMessagesViewController.
+  
+  Add following lines in viewDidLoad():
+```
+senderId = "1234"
+senderDisplayName = "..."
+```
+
+Add this Code right below super.viewDidLoad() and change the display name to your own name.
+   
+  
+  
+  
+  
+  
+  
+  
+  # Configuring JSQMessagesViewController
+We need a variable to store messages and to store it in a array and showed in the form of bubbles in JSQMVC
+  
+ 
+ ```
+ var messages = [JSQMessage]()
+ ```
+ Add above code below ChatViewController class
+ 
+ Providing messages data to JSQMVC to show it on mobile ui
+ 
+ ```
+ override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageDataForItemAt indexPath: IndexPath!) -> JSQMessageData!
+{
+    return messages[indexPath.item]
+}
+
+override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
+{
+    return messages.count
+}
+ ```
+ 
+ Add above code After closes bracket of view did load and inside chatviewcontroller class
+ 
+ ### Giving right color to message if its incoming meassge then its gonna be grey otherwise blue bubble
+ 
+ ```
+ lazy var outgoingBubble: JSQMessagesBubbleImage = {
+    return JSQMessagesBubbleImageFactory()!.outgoingMessagesBubbleImage(with: UIColor.jsq_messageBubbleBlue())
+}()
+
+lazy var incomingBubble: JSQMessagesBubbleImage = {
+    return JSQMessagesBubbleImageFactory()!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
+}()
+ ```
+ lazy menas they will be initialized once
+ 
+ 
+ ```
+ override func collectionView(_ collectionView: JSQMessagesCollectionView!, messageBubbleImageDataForItemAt indexPath: IndexPath!) -> JSQMessageBubbleImageDataSource!
+{
+    return messages[indexPath.item].senderId == senderId ? outgoingBubble : incomingBubble
+}
+
+override func collectionView(_ collectionView: JSQMessagesCollectionView!, avatarImageDataForItemAt indexPath: IndexPath!) -> JSQMessageAvatarImageDataSource!
+{
+    return nil
+}
+ ```
+ Add this code inside chat view controller class
+ 
+ ```
+ inputToolbar.contentView.leftBarButtonItem = nil
+collectionView.collectionViewLayout.incomingAvatarViewSize = CGSize.zero
+collectionView.collectionViewLayout.outgoingAvatarViewSize = CGSize.zero
+ ```
+ 
+### Add above code inside viewdidload()
+
+```
+override func collectionView(_ collectionView: JSQMessagesCollectionView!, attributedTextForMessageBubbleTopLabelAt indexPath: IndexPath!) -> NSAttributedString!
+{
+    return messages[indexPath.item].senderId == senderId ? nil : NSAttributedString(string: messages[indexPath.item].senderDisplayName)
+}
+
+override func collectionView(_ collectionView: JSQMessagesCollectionView!, layout collectionViewLayout: JSQMessagesCollectionViewFlowLayout!, heightForMessageBubbleTopLabelAt indexPath: IndexPath!) -> CGFloat
+{
+    return messages[indexPath.item].senderId == senderId ? 0 : 15
+}
+```
+
+### Add above code inside chatviewcontroller class with other functions
+
+* collectionView(_:attributedTextForMessageBubbleTopLabelAt:) is used when the label text is needed
+* collectionView(_:collectionViewLayout:heightForMessageBubbleTopLabelAt:) is used when the height of the top label is needed
+
+# Sending Chat to Firebase with didPressSend()
+
+
+```
+override func didPressSend(_ button: UIButton!, withMessageText text: String!, senderId: String!, senderDisplayName: String!, date: Date!)
+{
+    let ref = Constants.refs.databaseChats.childByAutoId()
+
+    let message = ["sender_id": senderId, "name": senderDisplayName, "text": text]
+
+    ref.setValue(message)
+
+    finishSendingMessage()
+}
+```
+### Add above code inside ChatVIewController class
+This code will send chat data to firebase database.
+
+
+# Observing Firebase For New Chat Messages
+
+```
+let query = Constants.refs.databaseChats.queryLimited(toLast: 10)
+
+_ = query.observe(.childAdded, with: { [weak self] snapshot in
+
+    if  let data        = snapshot.value as? [String: String],
+        let id          = data["sender_id"],
+        let name        = data["name"],
+        let text        = data["text"],
+        !text.isEmpty
+    {
+        if let message = JSQMessage(senderId: id, displayName: name, text: text)
+        {
+            self?.messages.append(message)
+
+            self?.finishReceivingMessage()
+        }
+    }
+})
+```
+Now we write code for getting data from firebase realtime. This will automatically fetch data from firebase if data changes into firebase.
+
+
+# Setting A User’s Display Name With A Dialog
+```
+@objc func showDisplayNameDialog()
+{
+    let defaults = UserDefaults.standard
+
+    let alert = UIAlertController(title: "Your Display Name", message: "Before you can chat, please choose a display name. Others will see this name when you send chat messages. You can change your display name again by tapping the navigation bar.", preferredStyle: .alert)
+
+    alert.addTextField { textField in
+
+        if let name = defaults.string(forKey: "jsq_name")
+        {
+            textField.text = name
+        }
+        else
+        {
+            let names = ["Ford", "Arthur", "Zaphod", "Trillian", "Slartibartfast", "Humma Kavula", "Deep Thought"]
+            textField.text = names[Int(arc4random_uniform(UInt32(names.count)))]
+        }
+    }
+
+    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak self, weak alert] _ in
+
+        if let textField = alert?.textFields?[0], !textField.text!.isEmpty {
+
+            self?.senderDisplayName = textField.text
+
+            self?.title = "Chat: \(self!.senderDisplayName!)"
+
+            defaults.set(textField.text, forKey: "jsq_name")
+            defaults.synchronize()
+        }
+    }))
+
+    present(alert, animated: true, completion: nil)
+}
+```
+
+Add above code below view did load and inside chat view controller
 
