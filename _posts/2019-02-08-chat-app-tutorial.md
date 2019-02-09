@@ -30,7 +30,7 @@ Inputting following items on next screen:
 
 After this your screen should be like this
 
-
+[https://github.com/Shivamall/shivamall.github.io/raw/master/App%20Images/Screen%20Shot%202019-02-08%20at%2012.08.45%20PM.png](https://github.com/Shivamall/shivamall.github.io/raw/master/App%20Images/Screen%20Shot%202019-02-08%20at%2012.08.45%20PM.png)
 
 Then click Next.In the next dialog, choose a  location in your drive to save your project.
 
