@@ -4,8 +4,6 @@
 
 ## [Guide to Build Chat App]({% post_url 2019-02-08-chat-app-tutorial %})
 
-[https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/BridgeCode.png]
-(https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/BridgeCode.png)
 ### Why we using Firebase
 Firebase is easy to handle and easy to understand and it is perfect to make Real Time Chat.It provide us cloud base database easy to access from anywhere.
 
@@ -22,7 +20,7 @@ Firebase is easy to handle and easy to understand and it is perfect to make Real
  Choose Single View Controller which has only one view controller after selecting single view press Next.
  
  <img src="../App%20Images/Screen%20Shot%202019-02-08%20at%2012.16.49%20PM.png">
- 
+  <img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/BridgeCode.png">
 Inputting following items on next screen:
 * Product Name: RealTimeChat
 * Team: Your name or company name
