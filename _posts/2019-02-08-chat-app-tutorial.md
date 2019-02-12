@@ -4,6 +4,8 @@
 
 ## [Guide to Build Chat App]({% post_url 2019-02-08-chat-app-tutorial %})
 
+[https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/BridgeCode.png]
+(https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/BridgeCode.png)
 ### Why we using Firebase
 Firebase is easy to handle and easy to understand and it is perfect to make Real Time Chat.It provide us cloud base database easy to access from anywhere.
 
@@ -150,16 +152,12 @@ Your Bridge-Header looke like this
 
 ### Next Step
 * Go to your Project Settings by clicking on your project in the Project Navigator, and go to the Build Settings tab for the     RealTimeChat Target.          
-
-<img src="../App%20Images/Screen%20Shot%202019-02-08%20at%2012.31.33%20PM.png">
-
-
-
-
-
-
 * Then, in the search box top-right, start typing bridging header. locate the row that says * Objective-C Bridging Header.
 * Double-click on the empty column next to Objective-C Bridging Header – input box appears. Type in: Bridging-Header.h and click outside the input box to confirm your change.\
+
+Your Bridge Hedaer build settings looks like this
+
+<img src="../App%20Images/Screen%20Shot%202019-02-08%20at%2012.31.33%20PM.png">
 
 # Setting up Firebase Now:
 Every Chat Message has a unique $key which differentiate every chat from other. This $key is a special property of firebase database
@@ -168,22 +166,15 @@ Every chat message has three properties: a name, a sender_id and the chat text.
  A path like chatapp/chats/-KmLvuZfWAmvictV04_u/sender_id is reference to individual chat.
  
  
- 
- 
- 
- 
- 
- 
+ <img src="../App%20Images/Screen%20Shot%202019-02-08%20at%203.45.23%20PM.png">
  
  * First Open firebase.google.com and signup for free account if you already have account so you can just signin.
  * Go to your firebase dashboard
  
  ## Click Add Project
  
- 
- 
- 
- 
+  
+ <img src="../App%20Images/Screen%20Shot%202019-02-08%20at%203.44.38%20PM.png">
  
  ###Choose:
  
@@ -200,7 +191,11 @@ Every chat message has three properties: a name, a sender_id and the chat text.
  
  Click Register App. In the next screen that appears, Download GoogleService-Info.plist button. .plist file will be downloaded , so save it in a download location.
  
- Add the .plist file to your Xcode Project . Drag and drop the file fro, finder into xcode. When dialog box appears tick the checkbox for Copy items and tick the checkbox next to Target.
+ <img src="../App%20Images/Screen%20Shot%202019-02-08%20at%203.51.36%20PM.png">
+ 
+ Add the .plist file to your Xcode Project . Drag and drop the file from finder into xcode. When dialog box appears tick the checkbox for Copy items and tick the checkbox next to Target.
+ 
+ <img src="../App%20Images/p;list.png">
   
   
   ### Add initialization code:
