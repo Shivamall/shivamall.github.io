@@ -56,12 +56,7 @@ Main Xcode View will showed up
 * Then, in the screen that appears, rename ViewController to ChatViewController. Make sure that the checkbox for Main.storyboard is       ticked.
 * At Last click rename on top right.
 
-
-
-
-
-
-
+<img src="App%20Images/Screen%20Shot%202019-02-08%20at%2012.27.20%20PM.png">
 
 ### Now its time to embed chatviewcontroller in a navigation controller:
 
@@ -136,23 +131,33 @@ Now we going to add Bridging header and installing JSQMessagesViewController lib
 
 * First, right click on your project in the Project Navigator and choose New File...
 * Then, select Header File from Source category and click Next.
+<img src="App%20Images/CreateBridge.png">
+
 * Finally, in the save dialog, name the file Bridging-Header.h. Make sure to tick the checkbox at the bottom of the dialog, the one for   Targets and Chat. Save the file alongside your Podfile and workspace files by clicking Create.
+
+
+<img src="App%20Images/NextBridge.png">
 
 When the file opens, type the following in it:
 
 ```
 #import <JSQMessagesViewController/JSQMessages.h>
 ```
+Your Bridge-Header looke like this
+
+<img src="App%20Images/BridgeCode.png">
+
+
 ### Next Step
-* Go to your Project Settings by clicking on your project in the Project Navigator, and go to the Build Settings tab for the               
+* Go to your Project Settings by clicking on your project in the Project Navigator, and go to the Build Settings tab for the     RealTimeChat Target.          
+
+<img src="App%20Images/Screen%20Shot%202019-02-08%20at%2012.31.33%20PM.png">
 
 
 
 
 
 
-
-RealTimeChat Target.
 * Then, in the search box top-right, start typing bridging header. locate the row that says * Objective-C Bridging Header.
 * Double-click on the empty column next to Objective-C Bridging Header – input box appears. Type in: Bridging-Header.h and click outside the input box to confirm your change.\
 
