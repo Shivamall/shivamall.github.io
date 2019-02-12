@@ -32,19 +32,14 @@ Inputting following items on next screen:
 
 After this your screen should be like this
 
-
+<img src="App%20Images/Screen%20Shot%202019-02-08%20at%2012.18.17%20PM.png">
 
 Then click Next.In the next dialog, choose a  location in your drive to save your project.
 
 Main Xcode View will showed up
 
-
-
-
-
-
-
-
+<img src="App%20Images/Screen%20Shot%202019-02-08%20at%2012.19.30%20PM.png
+">
 
 * On the extreme right, there are some  Inspectors. They give you fine control of aspects of your project, like UI elements in     Interface Builder, Quick Help, and file properties.
 * On the left, there are Navigators. They help with organizing your project and tools.
