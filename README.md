@@ -2,7 +2,7 @@
 
 # Tutorial To Build Real Time Chat with Firebase and Swift
 
-## [Guide to Build Chat App]({% post_url 2019-02-08-chat-app-tutorial %})
+
 
 ### Why we using Firebase
 Firebase is easy to handle and easy to understand and it is perfect to make Real Time Chat.It provide us cloud base database easy to access from anywhere.
