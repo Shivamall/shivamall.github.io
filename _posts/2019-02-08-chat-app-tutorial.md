@@ -19,8 +19,7 @@ Firebase is easy to handle and easy to understand and it is perfect to make Real
  Start Xcode - Choose File --> New --> Project .. A Dialog will poppup and we going to select project Temaplate for our app.
  Choose Single View Controller which has only one view controller after selecting single view press Next.
  
- <img src="../App%20Images/Screen%20Shot%202019-02-08%20at%2012.16.49%20PM.png">
-  <img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/BridgeCode.png">
+  <img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/Screen%20Shot%202019-02-08%20at%2012.16.49%20PM.png">
 Inputting following items on next screen:
 * Product Name: RealTimeChat
 * Team: Your name or company name
@@ -32,13 +31,13 @@ Inputting following items on next screen:
 
 After this your screen should be like this
 
-<img src="../App%20Images/Screen%20Shot%202019-02-08%20at%2012.18.17%20PM.png">
+<img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/Screen%20Shot%202019-02-08%20at%2012.18.17%20PM.png">
 
 Then click Next.In the next dialog, choose a  location in your drive to save your project.
 
 Main Xcode View will showed up
 
-<img src="../App%20Images/Screen%20Shot%202019-02-08%20at%2012.19.30%20PM.png
+<img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/Screen%20Shot%202019-02-08%20at%2012.19.30%20PM.png
 ">
 
 * On the extreme right, there are some  Inspectors. They give you fine control of aspects of your project, like UI elements in     Interface Builder, Quick Help, and file properties.
@@ -56,7 +55,7 @@ Main Xcode View will showed up
 * Then, in the screen that appears, rename ViewController to ChatViewController. Make sure that the checkbox for Main.storyboard is       ticked.
 * At Last click rename on top right.
 
-<img src="../App%20Images/Screen%20Shot%202019-02-08%20at%2012.27.20%20PM.png">
+<img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/Screen%20Shot%202019-02-08%20at%2012.27.20%20PM.png">
 
 ### Now its time to embed chatviewcontroller in a navigation controller:
 
@@ -131,12 +130,12 @@ Now we going to add Bridging header and installing JSQMessagesViewController lib
 
 * First, right click on your project in the Project Navigator and choose New File...
 * Then, select Header File from Source category and click Next.
-<img src="../App%20Images/CreateBridge.png">
+<img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/CreateBridge.png">
 
 * Finally, in the save dialog, name the file Bridging-Header.h. Make sure to tick the checkbox at the bottom of the dialog, the one for   Targets and Chat. Save the file alongside your Podfile and workspace files by clicking Create.
 
 
-<img src="../App%20Images/NextBridge.png">
+<img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/NextBridge.png">
 
 When the file opens, type the following in it:
 
@@ -145,7 +144,7 @@ When the file opens, type the following in it:
 ```
 Your Bridge-Header looke like this
 
-<img src="../App%20Images/BridgeCode.png">
+<img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/BridgeCode.png">
 
 
 ### Next Step
@@ -155,7 +154,7 @@ Your Bridge-Header looke like this
 
 Your Bridge Hedaer build settings looks like this
 
-<img src="../App%20Images/Screen%20Shot%202019-02-08%20at%2012.31.33%20PM.png">
+<img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/Screen%20Shot%202019-02-08%20at%2012.31.33%20PM.png">
 
 # Setting up Firebase Now:
 Every Chat Message has a unique $key which differentiate every chat from other. This $key is a special property of firebase database
@@ -164,7 +163,7 @@ Every chat message has three properties: a name, a sender_id and the chat text.
  A path like chatapp/chats/-KmLvuZfWAmvictV04_u/sender_id is reference to individual chat.
  
  
- <img src="../App%20Images/Screen%20Shot%202019-02-08%20at%203.45.23%20PM.png">
+ <img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/Screen%20Shot%202019-02-08%20at%203.45.23%20PM.png">
  
  * First Open firebase.google.com and signup for free account if you already have account so you can just signin.
  * Go to your firebase dashboard
@@ -172,7 +171,7 @@ Every chat message has three properties: a name, a sender_id and the chat text.
  ## Click Add Project
  
   
- <img src="../App%20Images/Screen%20Shot%202019-02-08%20at%203.44.38%20PM.png">
+ <img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/Screen%20Shot%202019-02-08%20at%203.44.38%20PM.png">
  
  ###Choose:
  
@@ -189,11 +188,11 @@ Every chat message has three properties: a name, a sender_id and the chat text.
  
  Click Register App. In the next screen that appears, Download GoogleService-Info.plist button. .plist file will be downloaded , so save it in a download location.
  
- <img src="../App%20Images/Screen%20Shot%202019-02-08%20at%203.51.36%20PM.png">
+ <img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/Screen%20Shot%202019-02-08%20at%203.51.36%20PM.png">
  
  Add the .plist file to your Xcode Project . Drag and drop the file from finder into xcode. When dialog box appears tick the checkbox for Copy items and tick the checkbox next to Target.
  
- <img src="../App%20Images/p;list.png">
+ <img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/p;list.png">
   
   
   ### Add initialization code:
@@ -202,15 +201,20 @@ Every chat message has three properties: a name, a sender_id and the chat text.
   * Right below import UIKit, type: import Firebase.
   * Locate the function application(_:didFinishLaunchingWithOptions:) and add this line to the method: FirebaseApp.configure().
   
+ 
+   <img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/firebase.png">
   
-  
-  
-  
+   
+   <img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/firecinfig.png">
   
   * Right-click on the project  and choose New File....
-  * Pick the Swift File template, name the file Constants.swift, add it to the Chat Target, and save the file in your project     
-    folder.
+  * Pick the Swift File template, name the file Constants.swift, add it to the Chat Target, and save the file in your project     folder.
   * click Create.
+  
+  <img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/filwnew.png">
+  <img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/swift.png">
+  <img src="https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/savefile.png">
+  
   
   Add below code in Constants.swift:
   
@@ -236,7 +240,7 @@ struct Constants
   
   * We need to set permissions. Firebase has permission tool which grant access to read or write data making data more secure from   
     unauthorized use.
-    This is app is to be used for group chat so permisiion gonna be simple.
+    This is app is to be used for group chat so permission gonna be simple.
 
 ```
 {
@@ -254,20 +258,7 @@ struct Constants
  * From top-left, choose the tab Rules.
  * Replace the text in the editor with the new rules and click Publish.
  
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  Now Check your is compiling properly or not.
+ Now Check your is compiling properly or not.
   
   # Setting Up The Messages View Controller
   Now we going config Ui plugin and connect it firebase.
@@ -284,13 +275,8 @@ senderDisplayName = "..."
 
 Add this Code right below super.viewDidLoad() and change the display name to your own name.
    
-  
-  
-  
-  
-  
-  
-  
+  <img src="  https://raw.githubusercontent.com/Shivamall/shivamall.github.io/master/App%20Images/Screen%20Shot%202019-02-08%20at%2012.34.12%20PM.png">
+
   # Configuring JSQMessagesViewController
 We need a variable to store messages and to store it in a array and showed in the form of bubbles in JSQMVC
   
@@ -316,7 +302,7 @@ override func collectionView(_ collectionView: UICollectionView, numberOfItemsIn
  
  Add above code After closes bracket of view did load and inside chatviewcontroller class
  
- ### Giving right color to message if its incoming meassge then its gonna be grey otherwise blue bubble
+ ### Giving right colour to message if its incoming message then its gonna be grey otherwise blue bubble
  
  ```
  lazy var outgoingBubble: JSQMessagesBubbleImage = {
@@ -327,7 +313,7 @@ lazy var incomingBubble: JSQMessagesBubbleImage = {
     return JSQMessagesBubbleImageFactory()!.incomingMessagesBubbleImage(with: UIColor.jsq_messageBubbleLightGray())
 }()
  ```
- lazy menas they will be initialized once
+ lazy means they will be initialized once
  
  
  ```
