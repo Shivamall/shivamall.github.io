@@ -19,6 +19,8 @@ Firebase is easy to handle and easy to understand and it is perfect to make Real
  Start Xcode - Choose File --> New --> Project .. A Dialog will poppup and we going to select project Temaplate for our app.
  Choose Single View Controller which has only one view controller after selecting single view press Next.
  
+ <img src="App%20Images/Screen%20Shot%202019-02-08%20at%2012.08.45%20PM.png">
+ 
 Inputting following items on next screen:
 * Product Name: RealTimeChat
 * Team: Your name or company name
@@ -30,7 +32,7 @@ Inputting following items on next screen:
 
 After this your screen should be like this
 
-![](App%20Images/Screen%20Shot%202019-02-08%20at%2012.08.45%20PM.png)
+
 
 Then click Next.In the next dialog, choose a  location in your drive to save your project.
 
