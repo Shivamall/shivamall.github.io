@@ -1,6 +1,6 @@
 
 
-# Tutorial To Build Real Time Chat with Firebase and Swift
+# Tutorial To Build Real Time Chat MObile App  with Firebase and Swift
 
 ## [Guide to Build Chat App]({% post_url 2019-02-08-chat-app-tutorial %})
 
@@ -441,5 +441,4 @@ Add above code below view did load and inside chat view controller
 * www.youtube.com
 * www.lynda.com
 *https://learnappmaking.com
-
-
+*https://www.raywenderlich.com/5359-firebase-tutorial-real-time-chat
