@@ -1,6 +1,6 @@
 
 
-# Tutorial To Build Real Time Chat MObile App  with Firebase and Swift
+# Tutorial To Build Real Time Chat Mobile App  with Firebase and Swift
 
 ## [Guide to Build Chat App]({% post_url 2019-02-08-chat-app-tutorial %})
 
