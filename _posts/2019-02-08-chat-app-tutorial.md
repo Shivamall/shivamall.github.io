@@ -438,10 +438,6 @@ Now we write code for getting data from firebase realtime. This will automatical
 Add above code below view did load and inside chat view controller
 
 #REFERENCES
-* www.youtube.com
-
-* www.lynda.com
-
-* https://learnappmaking.com
+* https://www.raywenderlich.com/5359-firebase-tutorial-real-time-chat
 
 
