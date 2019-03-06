@@ -8,3 +8,4 @@
 * Barcode scanner will be used to keep record of issued books and availability of books.
 * I have decided to make this app so there will be no scam in library by issuers.
 * Keep record of fines .
+
