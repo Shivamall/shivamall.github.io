@@ -1,7 +1,9 @@
 
 # Proposal-of-project-B-2019-03-01
 
-## [Android Library Book issueing]({% post_urlProposal-of-project-B %})
+
+## Android Library Book issueing]({% post_url Proposal-of-project-B %})
+
 
 ### Tasks:
 * My project app will keep record of number books in the library and specific type.
